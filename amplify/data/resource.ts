@@ -4,7 +4,8 @@ import { sayHello } from '../functions/hello/resource';
 const schema = a.schema({
   sayHello: a.query.arguments({
     name: a.string()
-  }).returns(a.string).
+  })
+  .returns(a.string()).
   handler(a.handler.function(sayHello))
   .authorization((allow) => [allow.publicApikey()])
 });
